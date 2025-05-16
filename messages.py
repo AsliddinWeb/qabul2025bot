@@ -32,10 +32,57 @@ async def messages_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -
             context.user_data['state'] = BotState.UNIVERSITET_HAQIDA
             university_text = (
                 "<b>🏛 Xalqaro Innovatsion Universitet</b>\n"
-                "Zamonaviy ta’lim, ilg‘or metodlar va xalqaro hamkorlik markazi."
-            )
-            await update.message.reply_text(university_text, parse_mode=ParseMode.HTML, reply_markup=buttons.BUTTON_BACK_TO_MAIN)
+                "Zamonaviy ta’lim, ilg‘or metodlar va xalqaro hamkorlik markazi.\n\n"
 
+                "<b>🎓 Bakalavriat yo‘nalishlari:</b>\n"
+                "• 📊 Iqtisodiyot\n"
+                "• 📘 Buxgalteriya hisobi va audit\n"
+                "• 💳 Moliya va moliyaviy texnologiyalar\n"
+                "• 👩‍🏫 Pedagogika va psixologiya\n"
+                "• 🌍 Filologiya va tillarni o‘qitish\n"
+                "• 🧒 Boshlang‘ich ta’lim\n"
+                "• 🧸 Maktabgacha ta’lim\n"
+                "• 🧠 Psixologiya\n"
+                "• 🗞 Jurnalistika\n"
+                "• 📚 Kutubxona-axborot faoliyati\n"
+                "• 🏺 Tarix\n"
+                "• 🤸‍♂️ Jismoniy madaniyat\n"
+                "• 🧩 Maxsus pedagogika\n"
+                "• 🏫 Pedagogika\n"
+                "• 🔢 Matematika va informatika\n"
+                "• 💻 Axborot tizimlari va texnologiyalari\n"
+                "• 🏗 Shahar qurilishi va infratuzilma\n\n"
+
+                "<b>🎓 Magistratura yo‘nalishlari:</b>\n"
+                "• 📊 Iqtisodiyot\n"
+                "• 🗣 Lingvistika (O‘zbek tili)\n"
+                "• 🇷🇺 Lingvistika (Rus tili)\n"
+                "• 🇬🇧 Lingvistika (Ingliz tili)\n"
+                "• 👩‍🏫 Pedagogika va psixologiya\n\n"
+
+                "<b>👨‍🎓 Talabalar soni:</b>\n"
+                "🌞 Kunduzgi — 1000+ talaba\n"
+                "🌙 Sirtqi — 3200+ talaba\n\n"
+
+                "<b>🏢 Infratuzilma:</b>\n"
+                "• 🖥 Axborot texnologiyalari bilan jihozlangan binolar\n"
+                "• 📚 Kutubxona va raqamli markazlar\n"
+                "• 🏠 Yotoqxona\n"
+                "• 🍽 Oshxona\n\n"
+
+                "<b>👨‍🏫 O‘qituvchilar:</b> 86+ ilmiy darajali mutaxassislar\n"
+                "<b>🤝 Hamkorlik:</b> Korxonalar, banklar, boshqarmalar bilan shartnomalar\n"
+            )
+            photo_path = "images/xiu.jpg"
+
+            await update.message.reply_photo(
+                photo=open(photo_path, "rb"),
+                caption=university_text,
+                parse_mode=ParseMode.HTML,
+                reply_markup=buttons.BUTTON_BACK_TO_MAIN
+            )
+
+        
         elif text == "📚 Yo'nalishlar":
             context.user_data['state'] = BotState.YONALISHLAR
             yonalish_text = (
