@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+.env
+.venv/
+venv/
+ENV/
+env/
+*.sqlite3
+
+# VS Code
+.vscode/
+
+# Pytest, coverage, mypy va boshqalar
+.coverage
+htmlcov/
+.mypy_cache/
+.pytest_cache/
+.tox/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# dotenv
+.env.*
