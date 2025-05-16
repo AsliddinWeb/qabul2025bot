@@ -34,6 +34,34 @@ async def messages_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -
                 "<b>🏛 Xalqaro Innovatsion Universitet</b>\n"
                 "Zamonaviy ta’lim, ilg‘or metodlar va xalqaro hamkorlik markazi.\n\n"
 
+                "<b>👨‍🎓 Talabalar soni:</b>\n"
+                "🌞 Kunduzgi — 1000+ talaba\n"
+                "🌙 Sirtqi — 3200+ talaba\n\n"
+
+                "<b>🏢 Infratuzilma:</b>\n"
+                "• 🖥 Axborot texnologiyalari bilan jihozlangan binolar\n"
+                "• 📚 Kutubxona va raqamli markazlar\n"
+                "• 🏠 Yotoqxona\n"
+                "• 🍽 Oshxona\n\n"
+
+                "<b>👨‍🏫 O‘qituvchilar:</b> 86+ ilmiy darajali mutaxassislar\n"
+                "<b>🤝 Hamkorlik:</b> Korxonalar, banklar, boshqarmalar bilan shartnomalar."
+            )
+
+            
+            photo_path = "./images/xiu.jpg"
+
+            await update.message.reply_photo(
+                photo=open(photo_path, "rb"),
+                caption=university_text,
+                parse_mode=ParseMode.HTML,
+                reply_markup=buttons.BUTTON_BACK_TO_MAIN
+            )
+
+        
+        elif text == "📚 Yo'nalishlar":
+            context.user_data['state'] = BotState.YONALISHLAR
+            yonalish_text = (
                 "<b>🎓 Bakalavriat yo‘nalishlari:</b>\n"
                 "• 📊 Iqtisodiyot\n"
                 "• 📘 Buxgalteriya hisobi va audit\n"
@@ -58,56 +86,24 @@ async def messages_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -
                 "• 🗣 Lingvistika (O‘zbek tili)\n"
                 "• 🇷🇺 Lingvistika (Rus tili)\n"
                 "• 🇬🇧 Lingvistika (Ingliz tili)\n"
-                "• 👩‍🏫 Pedagogika va psixologiya\n\n"
-
-                "<b>👨‍🎓 Talabalar soni:</b>\n"
-                "🌞 Kunduzgi — 1000+ talaba\n"
-                "🌙 Sirtqi — 3200+ talaba\n\n"
-
-                "<b>🏢 Infratuzilma:</b>\n"
-                "• 🖥 Axborot texnologiyalari bilan jihozlangan binolar\n"
-                "• 📚 Kutubxona va raqamli markazlar\n"
-                "• 🏠 Yotoqxona\n"
-                "• 🍽 Oshxona\n\n"
-
-                "<b>👨‍🏫 O‘qituvchilar:</b> 86+ ilmiy darajali mutaxassislar\n"
-                "<b>🤝 Hamkorlik:</b> Korxonalar, banklar, boshqarmalar bilan shartnomalar\n"
-            )
-            photo_path = "images/xiu.jpg"
-
-            await update.message.reply_photo(
-                photo=open(photo_path, "rb"),
-                caption=university_text,
-                parse_mode=ParseMode.HTML,
-                reply_markup=buttons.BUTTON_BACK_TO_MAIN
-            )
-
-        
-        elif text == "📚 Yo'nalishlar":
-            context.user_data['state'] = BotState.YONALISHLAR
-            yonalish_text = (
-                "<b>📚 Mavjud yo'nalishlar:</b>\n"
-                "1️⃣ Dasturlash\n"
-                "2️⃣ Pedagogika\n"
-                "3️⃣ Iqtisodiyot\n"
-                "4️⃣ Tibbiyot va boshqa yo'nalishlar"
+                "• 👩‍🏫 Pedagogika va psixologiya"
             )
             await update.message.reply_text(yonalish_text, parse_mode=ParseMode.HTML, reply_markup=buttons.BUTTON_BACK_TO_MAIN)
 
         elif text == "📞 Bog‘lanish":
             context.user_data['state'] = BotState.BOGLANISH
             boglanish_text = (
-                "<b>📞 Biz bilan bog‘laning:</b>\n"
-                "📱 Telefon: <code>+998901234567</code>\n"
-                "✉ Email: <a href='mailto:info@innovatsion.uz'>info@innovatsion.uz</a>"
+                "<b>📞 Biz bilan bog‘laning:</b>\n\n"
+                "📱 <b>Telefon:</b> <code>+998(55)406-15-15</code>\n"
+                "📩 <b>Telegram:</b> @xiuedu_uz"
             )
             await update.message.reply_text(boglanish_text, parse_mode=ParseMode.HTML, reply_markup=buttons.BUTTON_BACK_TO_MAIN)
 
         elif text == "👨‍💻 Dasturchi":
             context.user_data['state'] = BotState.DASTURCHI
             dasturchi_text = (
-                "👨‍💻 <b>Bot muallifi:</b> Asliddin Abdujabborov\n"
-                "📲 Telegram: <a href='https://t.me/yourusername'>@yourusername</a>"
+                "👨‍💻 <b>Bot muallifi:</b> Asliddin Abdujabborov\n\n"
+                "📲 Telegram: <a href='https://t.me/Asliddin_Abdujabborov'>@Asliddin_Abdujabborov</a>"
             )
             await update.message.reply_text(dasturchi_text, parse_mode=ParseMode.HTML, reply_markup=buttons.BUTTON_BACK_TO_MAIN)
 
