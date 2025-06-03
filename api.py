@@ -20,7 +20,7 @@ def auth_api(phone: str, telegram_id: str) -> dict | None:
             return None
     except Exception as e:
         print("[EXCEPTION] Auth API Error:", e)
-        return None
+        return e
 
 
 def verify_code_api(phone: str, code: str) -> dict | None:
