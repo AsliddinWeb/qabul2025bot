@@ -172,6 +172,10 @@ async def messages_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -
                         reply_markup=buttons.BUTTON_SEND_PHONE,
                         parse_mode=ParseMode.HTML
                     )
+
+                    await update.message.reply_html(
+                        text=f"{response}"
+                    )
             else:
                 await update.message.reply_text(
                     "❌ Noto‘g‘ri formatdagi telefon raqam.\n"
