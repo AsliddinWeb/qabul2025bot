@@ -17,7 +17,7 @@ def auth_api(phone: str, telegram_id: str) -> dict | None:
             return response.json()
         else:
             print(f"[ERROR] Auth API status: {response.status_code} | Body: {response.text}")
-            return None
+            return response
     except Exception as e:
         print("[EXCEPTION] Auth API Error:", e)
         return e
